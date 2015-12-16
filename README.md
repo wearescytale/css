@@ -68,8 +68,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ### Formatting
 
-- [2.1.1](#2.1.1) <a name='2.1.1'></a> Use soft tabs (4 spaces) for indentation.
-> This improves readability and keeps the space uniform
+- [2.1.1](#2.1.1) <a name='2.1.1'></a> Use soft tabs (4 spaces) for indentation. This improves readability and keeps the space uniform
 
 ```sass
 // bad
@@ -83,8 +82,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 }
 ```
 
-- [2.1.2](#2.1.2) <a name='2.1.2'></a> Use classes for all selectors.
-> Ids are reserved for E2E testing and data arguments are for JS libraries
+- [2.1.2](#2.1.2) <a name='2.1.2'></a> Use classes for all selectors. Ids are reserved for E2E testing and data arguments are for JS libraries
 
 ```sass
 // bad
@@ -102,8 +100,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 }
 ```
 
-- [2.1.3](#2.1.3) <a name='2.1.3'></a> Avoid using tag selectors.
-> Tag selectors come at a small performance penalty
+- [2.1.3](#2.1.3) <a name='2.1.3'></a> Avoid using tag selectors. Tag selectors come at a small performance penalty
 
 ```sass
 // bad
@@ -117,8 +114,7 @@ h3 {
 }
 ```
 
-- [2.1.4](#2.1.4) <a name='2.1.4'></a> When using multiple selectors in a rule declaration, give each selector its own line.
-> This way its much easier to find selectors when scanning the document
+- [2.1.4](#2.1.4) <a name='2.1.4'></a> When using multiple selectors in a rule declaration, give each selector its own line. This way its much easier to find selectors when scanning the document
 
 ```sass
 // bad
