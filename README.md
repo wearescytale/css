@@ -25,6 +25,7 @@ Based on the awesome [Airbnb Style Guide](https://github.com/airbnb/css)
       - [4.3 Variants](#variants)
       - [4.4 Nested components](#nested-components)
       - [4.5 Layouts](#layouts)
+  5. [Conventions](#conventions)
 
 ## Terminology
 
@@ -256,7 +257,7 @@ When selectors become this long, you're likely writing CSS that is:
 
 ![Component Example](img/component-example.png)
 
-- [4.1.1](#4.1.1) <a name='4.1.1'></a> Name components will be named with at least two workds, seperated by a dash.
+- [4.1.1](#4.1.1) <a name='4.1.1'></a> Name components will be named with at least two works, seperated by a dash.
 
 ```sass
 .like-button {
@@ -391,3 +392,27 @@ If you need to define these, try to define them in whatever context they will be
     }
 }
 ```
+
+### Conventions
+
+- [5.1](#5.1) <a name='5.1'></a> Every colors need to be on the `colors.scss` file. The color name should have a `brand-` prefix for the brand primary colors and a tone as a suffix.
+
+```sass
+// bad
+$green: green;
+$green-2: green;
+
+//good
+$brand-green: green;
+$brand-green-light: green;
+
+```
+
+- [5.2](#5.2) <a name='5.2'></a> For colors where the opacity changes a suffix must be added from the available list:
+    * xs
+    * s
+    * m
+    * l
+    * -xl
+    * -xxl
+    * -xxxl

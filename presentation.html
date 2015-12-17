@@ -17,6 +17,9 @@
       .remark-container {
           background: #263238;
       }
+      .remark-slide-scaler {
+          box-shadow: none;
+      }
       h1 {
           color: #ECEFF1;
       }
@@ -278,6 +281,40 @@ When selectors become this long, you're likely writing CSS that is:
 ---
 
 class: center, middle
+
+### Conventions
+
+---
+
+- [5.1](#5.1) <a name='5.1'></a> Every colors need to be on the `colors.scss` file. The color name should have a `brand-` prefix for the brand primary colors and a tone as a suffix.
+
+```sass
+// bad
+$green: green;
+$green-2: green;
+
+//good
+$brand-green: green;
+$brand-green-light: green;
+
+```
+
+
+---
+
+- [5.2](#5.2) <a name='5.2'></a> For colors where the opacity changes a suffix must be added from the available list:
+    * `-xs`
+    * `-s`
+    * `-m`
+    * `-l`
+    * `-xl`
+    * `-xxl`
+    * `-xxxl`
+
+---
+
+class: center, middle
+
 ## RSCSS
 
 ---
@@ -448,6 +485,12 @@ If you need to define these, try to define them in whatever context they will be
     /* ... */
 }
 ```
+
+---
+
+class: center, middle
+
+## Thank you
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
     </script>
