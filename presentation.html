@@ -4,24 +4,58 @@
     <title>Title</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:200italic,400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,600);
 
-      body { font-family: 'Open Sans', sans-serif; }
-      h1, h2, h3 {
-        /*font-family: 'Yanone Kaffeesatz';*/
-        font-family: 'Open Sans', sans-serif;
-        font-weight: normal;
+      html {
+          -webkit-font-smoothing: antialiased;
+      }
+      body, h1, h2, h3 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 300;
+      }
+      .remark-container {
+          background: #263238;
+      }
+      h1 {
+          color: #ECEFF1;
+      }
+      h2 {
+          color: #B0BEC5;
+          font-weight: 400;
+      }
+      h3 {
+          color: #9E9E9E;
+      }
+      a {
+          color: #2196F3;
+          text-decoration: none;
+      }
+      .colored {
+          background: #607D8B;
+      }
+      .colored h2 {
+          font-weight: 300;
+      }
+      strong {
+          color: #607D8B;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .remark-inline-code {
+          background: #ECEFF1;
+          color: #37474F;
+          font-style: italic;
+          padding: 0 5px;
+      }
     </style>
   </head>
   <body>
     <textarea id="source">
 
-class: center, middle
+class: center, middle, colored
 
-## Scytale
+## Scytale's
 # CSS/SCSS Guidelines
 
 ---
@@ -36,7 +70,7 @@ class: center, middle
 
 - [2.1.1](#2.1.1) <a name='2.1.1'></a> Use soft tabs (4 spaces) for indentation. This improves readability and keeps the space uniform
 
-```sass
+```css
 // bad
 .avatar{
   border-radius: 50%;
@@ -50,9 +84,11 @@ class: center, middle
 
 ---
 
+### Formatting
+
 - [2.1.2](#2.1.2) <a name='2.1.2'></a> Use classes for all selectors. Ids are reserved for E2E testing and data arguments are for JS libraries
 
-```sass
+```css
 // bad
 #panel {
     /* ... */
@@ -70,9 +106,11 @@ class: center, middle
 
 ---
 
+### Formatting
+
 - [2.1.3](#2.1.3) <a name='2.1.3'></a> Avoid using tag selectors. Tag selectors come at a small performance penalty
 
-```sass
+```css
 // bad
 h3 {
     /* ... */
@@ -86,9 +124,11 @@ h3 {
 
 ---
 
+### Formatting
+
 - [2.1.4](#2.1.4) <a name='2.1.4'></a> When using multiple selectors in a rule declaration, give each selector its own line. This way its much easier to find selectors when scanning the document
 
-```sass
+```css
 // bad
 .panel, .box {
     /* ... */
@@ -103,9 +143,11 @@ h3 {
 
 ---
 
+### Formatting
+
 - [2.1.5](#2.1.5) <a name='2.1.5'></a> Put a space before the opening brace `{` in rule declarations. In properties, put a space after, but not before, the `:` character. Put closing braces `}` of rule declarations on a new line. Put blank lines between rule declarations
 
-```sass
+```css
 // bad
 .panel{
     font-size:2px;color:white}
@@ -120,7 +162,7 @@ h3 {
 ---
 
 class: center, middle
-## Sass
+## SCSS
 
 ---
 
@@ -130,7 +172,7 @@ class: center, middle
 
 - [3.1.2](#3.1.2) <a name='3.1.2'></a> Order your `@extend`, `@include` declarations and regular CSS lastly with a newline between the last two.
 
-```scss
+```css
 .btn-green {
     @extend %btn;
     @include transition(background 0.5s ease);
@@ -142,10 +184,11 @@ class: center, middle
 
 ---
 
+### Syntax
 
 - [3.1.3](#3.1.3) <a name='3.1.3'></a> Nested selectors, _if necessary_, go last, and nothing goes after them. Add whitespace between your rule declarations and nested selectors, as well as between adjacent nested selectors. Apply [3.1.2](#3.1.2) as above to your nested selectors.
 
-```scss
+```css
 .btn {
   @extend %btn;
 
@@ -176,7 +219,7 @@ Placeholders in Sass, defined via `%selector` and used with `@extend`, are a way
 
 **Sass**
 
-```sass
+```css
 // Unless we call `@extend %icon` these properties won't be compiled!
 %icon {
   font-family: "Airglyphs";
@@ -195,7 +238,7 @@ Placeholders in Sass, defined via `%selector` and used with `@extend`, are a way
 
 **Compiled CSS**
 
-```sass
+```css
 .icon-error,
 .icon-success {
   font-family: "Airglyphs";
@@ -216,7 +259,7 @@ Placeholders in Sass, defined via `%selector` and used with `@extend`, are a way
 
 **Do not nest selectors more than three levels deep!**
 
-```scss
+```css
 .page-container {
   .content {
     .profile {
@@ -241,11 +284,11 @@ class: center, middle
 
 ### Components
 
-![Component Example](https://github.com/wearescytale/css/raw/master/img/component-example.png)
+![Component Example](img/component-example.png)
 
 - [4.1.1](#4.1.1) <a name='4.1.1'></a> Name components will be named with at least two workds, seperated by a dash.
 
-```sass
+```css
 .like-button {
     /* ... */
 }
@@ -259,11 +302,11 @@ class: center, middle
 
 ### Elements
 
-![Element Example](https://github.com/wearescytale/css/raw/master/img/component-elements.png)
+![Element Example](img/component-elements.png)
 
 - [4.2.1](#4.2.1) <a name='4.2.1'></a> Each component may have elements. They should have classes that are only one word.
 
-```sass
+```css
 .search-form {
     > .field {
         /* ... */
@@ -278,12 +321,12 @@ class: center, middle
 ---
 ### Elements
 
-![Element Example](https://github.com/wearescytale/css/raw/master/img/component-elements.png)
+![Element Example](img/component-elements.png)
 
 
 - [4.2.2](#4.2.2) <a name='4.2.2'></a> Always prefer to use the `>` child selector whenever possible.
 
-```sass
+```css
 .article-card {
     .title {
         /* okay */
@@ -298,12 +341,12 @@ class: center, middle
 ---
 ### Elements
 
-![Element Example](https://github.com/wearescytale/css/raw/master/img/component-elements.png)
+![Element Example](img/component-elements.png)
 
 
 - [4.2.3](#4.2.3) <a name='4.2.3'></a> For elements that need two or more words, concatenate them without dashes or underscores.
 
-```sass
+```css
 .profile-box {
     > .firstname {
         /* ... */
@@ -319,13 +362,17 @@ class: center, middle
 
 ### Variants
 
-![Variants Example](https://github.com/wearescytale/css/raw/master/img/component-modifiers.png)
+![Variants Example](img/component-modifiers.png)
 
 - [4.3.1](#4.3.1) <a name='4.3.1'></a> Variants customize a component or an element. Variants are prefixed by a dash `-`.
 
 ---
 
-```sass
+### Variants
+
+![Variants Example](img/component-modifiers.png)
+
+```css
 .search-form {
     &.-prefixed {
         /* ... */
@@ -341,13 +388,17 @@ class: center, middle
 
 ### Nested components
 
-![Nested Example](https://github.com/wearescytale/css/raw/master/img/component-nesting.png)
+![Nested Example](img/component-nesting.png)
 
 - [4.4.1](#4.4.1) <a name='4.4.1'></a> When a component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component. Instead, prefer to add a variant to the nested component and apply it from the containing component.
 
 ---
 
-```sass
+### Nested components
+
+![Nested Example](img/component-nesting.png)
+
+```css
 
 // bad
 .article-header {
@@ -381,7 +432,7 @@ class: center, middle
 
 If you need to define these, try to define them in whatever context they will be in.
 
-```sass
+```css
 .article-list {
     & {
         @include clearfix;
@@ -394,25 +445,16 @@ If you need to define these, try to define them in whatever context they will be
 }
 
 .article-card {
-    & {
-        /* ... */
-    }
-    > .image {
-        /* ... */
-    }
-    > .title {
-        /* ... */
-    }
-    > .category {
-        /* ... */
-    }
+    /* ... */
 }
 ```
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+          highlightStyle: 'zenburn'
+      });
     </script>
   </body>
 </html>
