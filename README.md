@@ -144,6 +144,8 @@ h3 {
 }
 ```
 
+- [2.1.6](#2.1.6) <a name='2.1.6'></a> Only use `!important` to keep a plane from crashing.
+
 ### Comments
 
 - [2.2.1](#2.2.1) <a name='2.2.1'></a> Prefer line comments `//` to block comments.
